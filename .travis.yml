@@ -1,0 +1,6 @@
+notifications:
+  recipients:
+    - kou@cozmixng.org
+rvm:
+  - 1.9.3
+  - 2.0.0
