@@ -21,7 +21,15 @@ Gem::Specification.new do |spec|
   spec.authors = ["Kouhei Sutou"]
   spec.email = ["kou@cozmixng.org"]
   spec.summary = "native-package-installer helps to install native packages on \"gem install\""
-  spec.description = "Ruby bindings for cairo"
+  spec.description = <<-DESCRIPTION.strip
+Users need to install native packages to install an extension library
+that depends on native packages. It bores users because users need to
+install native packages and an extension library separatelly.
+
+native-package-installer helps to install native packages on "gem install".
+Users can install both native packages and an extension library by one action,
+"gem install".
+DESCRIPTION
   spec.homepage = "https://github.com/ruby-gnome2/native-package-installer"
   spec.licenses = ["LGPLv3 or later"]
   spec.require_paths = ["lib"]
