@@ -34,7 +34,7 @@ DESCRIPTION
   spec.licenses = ["LGPLv3 or later"]
   spec.require_paths = ["lib"]
 
-  spec.files = ["README.md", "NEWS", "Rakefile"]
+  spec.files = ["README.md", "Rakefile"]
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("doc/text/**/*.*")
   spec.test_files = Dir.glob("test/**/*.rb")
