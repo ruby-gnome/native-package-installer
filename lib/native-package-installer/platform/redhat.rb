@@ -13,32 +13,20 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module NativePackage
+class NativePackageInstaller
   module Platform
-    PLATFORM_CLASSES = []
+    class RedHat
+      Platform.register(self)
 
-    class << self
-      def register(platform_class)
-        PLATFORM_CLASSES << platform_class
+      class << self
+        def current_platform?
+          File.exist?("/etc/redhat-release")
+        end
       end
 
-      def detect
-        platform_class = PLATFORM_CLASSES.find do |platform_class|
-          platform_class.current_platform?
-        end
-        platform_class ||= Unkown
-        platform_class.new
+      def package(spec)
+        spec[:redhat]
       end
     end
   end
 end
-
-require "native-package/platform/debian"
-require "native-package/platform/fedora"
-require "native-package/platform/redhat"
-require "native-package/platform/suse"
-require "native-package/platform/altlinux"
-require "native-package/platform/arch"
-require "native-package/platform/homebrew"
-require "native-package/platform/macports"
-require "native-package/platform/unknown"

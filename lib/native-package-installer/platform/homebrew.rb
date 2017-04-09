@@ -13,19 +13,19 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module NativePackage
+class NativePackageInstaller
   module Platform
-    class ArchLinux
+    class Homebrew
       Platform.register(self)
 
       class << self
         def current_platform?
-          ExecutableFinder.exist?("pacman")
+          ExecutableFinder.exist?("brew")
         end
       end
 
       def package(spec)
-        spec[:arch_linux]
+        spec[:homebrew]
       end
     end
   end

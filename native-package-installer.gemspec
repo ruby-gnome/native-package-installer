@@ -16,7 +16,7 @@
 lib_dir = File.join(File.dirname(__FILE__), "lib")
 $LOAD_PATH.unshift(lib_dir)
 
-require "native-package/installer/version"
+require "native-package-installer/version"
 
 Gem::Specification.new do |spec|
   spec.name = "native-package-installer"
@@ -34,7 +34,7 @@ Users can install both native packages and an extension library by one action,
 "gem install".
 DESCRIPTION
   spec.homepage = "https://github.com/ruby-gnome2/native-package-installer"
-  spec.licenses = ["LGPLv3 or later"]
+  spec.licenses = ["LGPL-3+"]
   spec.require_paths = ["lib"]
 
   spec.files = ["README.md", "Rakefile"]

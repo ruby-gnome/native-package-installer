@@ -13,19 +13,11 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module NativePackage
+class NativePackageInstaller
   module Platform
-    class ALTLinux
-      Platform.register(self)
-
-      class << self
-        def current_platform?
-          File.exist?("/etc/altlinux-release")
-        end
-      end
-
+    class Unknown
       def package(spec)
-        spec[:alt_linux]
+        nil
       end
     end
   end

@@ -1,4 +1,4 @@
-# Copyright (C) 2013  Kouhei Sutou <kou@cozmixng.org>
+# Copyright (C) 2017  Kouhei Sutou <kou@cozmixng.org>
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -13,19 +13,19 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module NativePackage
+class NativePackageInstaller
   module Platform
-    class Debian
+    class Fedora
       Platform.register(self)
 
       class << self
         def current_platform?
-          File.exist?("/etc/debian_version")
+          File.exist?("/etc/fedora-release")
         end
       end
 
       def package(spec)
-        spec[:debian]
+        spec[:fedora] || spec[:redhat]
       end
     end
   end

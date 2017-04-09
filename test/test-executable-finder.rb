@@ -15,7 +15,7 @@
 
 require "fileutils"
 
-require "native-package/executable-finder"
+require "native-package-installer/executable-finder"
 
 class ExecutableFinderTest < Test::Unit::TestCase
   def setup
@@ -50,7 +50,7 @@ class ExecutableFinderTest < Test::Unit::TestCase
 
   private
   def create_finder(basename)
-    NativePackage::ExecutableFinder.new(basename)
+    NativePackageInstaller::ExecutableFinder.new(basename)
   end
 
   class TestFind < self
