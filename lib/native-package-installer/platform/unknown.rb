@@ -19,6 +19,10 @@ class NativePackageInstaller
       def package(spec)
         nil
       end
+
+      def need_super_user_priviledge?
+        false
+      end
     end
   end
 end

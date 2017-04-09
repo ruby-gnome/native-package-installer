@@ -27,6 +27,10 @@ class NativePackageInstaller
       def package(spec)
         spec[:alt_linux]
       end
+
+      def need_super_user_priviledge?
+        true
+      end
     end
   end
 end

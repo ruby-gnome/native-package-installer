@@ -27,6 +27,10 @@ class NativePackageInstaller
       def package(spec)
         spec[:macports]
       end
+
+      def need_super_user_priviledge?
+        true
+      end
     end
   end
 end

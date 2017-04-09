@@ -27,6 +27,10 @@ class NativePackageInstaller
       def package(spec)
         spec[:homebrew]
       end
+
+      def need_super_user_priviledge?
+        false
+      end
     end
   end
 end

@@ -29,19 +29,19 @@ class NativePackageInstaller
 
   def initialize(spec)
     @spec = spec
-    @package_system = PackageSystem.detect
+    @platform = Platform.detect
   end
 
   def install
     return true if windows?
 
-    package = @package_system.package(@spec)
+    package = @platform.package(@spec)
     return false if package.nil?
 
     package_name, *options = package
     package_command_line = [package_name, *options].join(" ")
 
-    install_command = @package_system.install_command(package_command_line)
+    install_command = @platform.install_command(package_command_line)
     if have_priviledge?
       sudo = nil
     else
@@ -109,7 +109,7 @@ iled to run '#{install_command}'.
   end
 
   def have_priviledge?
-    return true unless @package_system.need_super_user_priviledge?
+    return true unless @platform.need_super_user_priviledge?
     super_user?
   end
 
