@@ -1,6 +1,9 @@
 notifications:
-  recipients:
-    - kou@cozmixng.org
+  email:
+    recipients:
+      - ruby-gnome2-cvs@lists.sourceforge.net
+
 rvm:
-  - 1.9.3
-  - 2.0.0
+  - 2.2
+  - 2.3
+  - 2.4.1
