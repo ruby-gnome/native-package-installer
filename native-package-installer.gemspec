@@ -20,19 +20,19 @@ require "native-package-installer/version"
 
 Gem::Specification.new do |spec|
   spec.name = "native-package-installer"
-  spec.version = NativePackage::Installer::VERSION
+  spec.version = NativePackageInstaller::VERSION
   spec.authors = ["Kouhei Sutou"]
-  spec.email = ["kou@cozmixng.org"]
+  spec.email = ["kou@clear-code.com"]
   spec.summary = "native-package-installer helps to install native packages on \"gem install\""
   spec.description = <<-DESCRIPTION.strip
 Users need to install native packages to install an extension library
 that depends on native packages. It bores users because users need to
-install native packages and an extension library separatelly.
+install native packages and an extension library separately.
 
 native-package-installer helps to install native packages on "gem install".
 Users can install both native packages and an extension library by one action,
 "gem install".
-DESCRIPTION
+  DESCRIPTION
   spec.homepage = "https://github.com/ruby-gnome2/native-package-installer"
   spec.licenses = ["LGPL-3+"]
   spec.require_paths = ["lib"]
@@ -45,6 +45,5 @@ DESCRIPTION
   spec.add_development_dependency("bundler")
   spec.add_development_dependency("rake")
   spec.add_development_dependency("test-unit-rr")
-  spec.add_development_dependency("test-unit-notify")
   spec.add_development_dependency("packnga")
 end
