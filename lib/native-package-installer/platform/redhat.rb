@@ -28,6 +28,11 @@ class NativePackageInstaller
         spec[:redhat]
       end
 
+
+      def install_command
+        "yum install -y"
+      end
+
       def need_super_user_priviledge?
         true
       end

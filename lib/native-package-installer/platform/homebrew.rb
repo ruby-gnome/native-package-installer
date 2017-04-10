@@ -28,6 +28,10 @@ class NativePackageInstaller
         spec[:homebrew]
       end
 
+      def install_command
+        "brew install"
+      end
+
       def need_super_user_priviledge?
         false
       end

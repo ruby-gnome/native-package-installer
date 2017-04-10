@@ -28,6 +28,10 @@ class NativePackageInstaller
         spec[:debian]
       end
 
+      def install_command
+        "apt install -V -y"
+      end
+
       def need_super_user_priviledge?
         true
       end

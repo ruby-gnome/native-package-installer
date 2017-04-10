@@ -41,7 +41,7 @@ class NativePackageInstaller
     package_name, *options = package
     package_command_line = [package_name, *options].join(" ")
 
-    install_command = @platform.install_command(package_command_line)
+    install_command = "#{@platform.install_command} #{package_command_line}"
     if have_priviledge?
       sudo = nil
     else

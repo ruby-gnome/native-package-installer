@@ -28,6 +28,10 @@ class NativePackageInstaller
         spec[:macports]
       end
 
+      def install_command
+        "port install -y"
+      end
+
       def need_super_user_priviledge?
         true
       end

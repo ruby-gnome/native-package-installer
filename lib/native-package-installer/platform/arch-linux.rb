@@ -28,6 +28,10 @@ class NativePackageInstaller
         spec[:arch_linux]
       end
 
+      def install_command
+        "pacman -S --noconfirm"
+      end
+
       def need_super_user_priviledge?
         true
       end

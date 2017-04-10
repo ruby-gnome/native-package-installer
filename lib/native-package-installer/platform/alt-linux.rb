@@ -13,9 +13,11 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+require "native-package-installer/platform/debian"
+
 class NativePackageInstaller
   module Platform
-    class ALTLinux
+    class ALTLinux < Debian
       Platform.register(self)
 
       class << self
@@ -26,10 +28,6 @@ class NativePackageInstaller
 
       def package(spec)
         spec[:alt_linux]
-      end
-
-      def need_super_user_priviledge?
-        true
       end
     end
   end

@@ -28,6 +28,10 @@ class NativePackageInstaller
         spec[:suse] || spec[:fedora] || spec[:redhat]
       end
 
+      def install_command
+        "zypper --non-interactive install"
+      end
+
       def need_super_user_priviledge?
         true
       end
