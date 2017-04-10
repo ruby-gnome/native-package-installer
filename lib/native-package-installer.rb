@@ -51,7 +51,7 @@ class NativePackageInstaller
     installing_message = "installing '#{package_name}' native package... "
     log_message("%s", installing_message)
     failed_to_get_super_user_priviledge = false
-    if have_priviledge
+    if have_priviledge?
       succeeded = run_command(install_command)
     else
       if sudo
