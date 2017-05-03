@@ -26,7 +26,7 @@ class NativePackageInstaller
         platform_class = PLATFORM_CLASSES.find do |platform_class|
           platform_class.current_platform?
         end
-        platform_class ||= Unkown
+        platform_class ||= Unknown
         platform_class.new
       end
     end
