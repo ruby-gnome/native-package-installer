@@ -13,11 +13,9 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require "native-package-installer/platform/redhat"
-
 class NativePackageInstaller
   module Platform
-    class Fedora < RedHat
+    class Fedora
       Platform.register(self)
 
       class << self
@@ -27,7 +25,15 @@ class NativePackageInstaller
       end
 
       def package(spec)
-        spec[:fedora] || super
+        spec[:fedora] || spec[:rehat]
+      end
+
+      def install_command
+        "dnf install -y"
+      end
+
+      def need_super_user_priviledge?
+        true
       end
     end
   end

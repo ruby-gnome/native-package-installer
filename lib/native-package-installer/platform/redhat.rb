@@ -28,7 +28,6 @@ class NativePackageInstaller
         spec[:redhat]
       end
 
-
       def install_command
         "yum install -y"
       end
