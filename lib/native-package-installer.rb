@@ -79,13 +79,13 @@ class NativePackageInstaller
     unless succeeded
       if failed_to_get_super_user_priviledge
         error_message = <<-MESSAGE
-{package_name}' native package is required.
-n the following command as super user to install required native package:
-\# #{install_command}
+'#{package_name}' native package is required.
+Run the following command as super user to install required native package:
+  \# #{install_command}
         MESSAGE
       else
         error_message = <<-MESSAGE
-iled to run '#{install_command}'.
+Failed to run '#{install_command}'.
         MESSAGE
       end
     end
