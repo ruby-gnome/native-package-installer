@@ -1,5 +1,11 @@
 # News
 
+## 1.0.3 - 2017-05-29
+
+### Improvements
+
+  * Supported PATH setup on MSYS2.
+
 ## 1.0.2 - 2017-05-29
 
 ### Improvements
