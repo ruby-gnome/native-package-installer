@@ -29,7 +29,7 @@ class NativePackageInstaller
 
     def initialize(basename)
       @basename = basename
-      @appended_path = []
+      @appended_paths = []
     end
 
     def find
@@ -59,11 +59,11 @@ class NativePackageInstaller
     def paths
       path_env = ENV["PATH"]
       if path_env
-        base_path = path_env.split(File::PATH_SEPARATOR)
+        base_paths = path_env.split(File::PATH_SEPARATOR)
       else
-        base_path = ["/usr/local/bin", "/usr/bin", "/bin"]
+        base_paths = ["/usr/local/bin", "/usr/bin", "/bin"]
       end
-      paths + @appended_paths
+      base_paths + @appended_paths
     end
 
     def detect_extensions
