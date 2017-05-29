@@ -21,11 +21,11 @@ class NativePackageInstaller
       class << self
         def current_platform?
           return false if package_prefix.nil?
-          not packman_path.nil?
+          not pacman_path.nil?
         end
 
-        def packman_path
-          finder = ExecutableFinder.new("packman")
+        def pacman_path
+          finder = ExecutableFinder.new("pacman")
           case RUBY_PLATFORM
           when "x86-mingw32"
             Dir.glob("c:/msys*/mingw32/bin") do |bin|
@@ -59,12 +59,12 @@ class NativePackageInstaller
       end
 
       def install_command
-        packman = self.class.packman_path
+        pacman = self.class.pacman_path
         required_packages = [
           "base-devel",
           "#{self.class.package_prefix}-toolchain"
         ].join(" ")
-        "#{packman} -S --noconfirm #{required_pakcages}"
+        "#{pacman} -S --noconfirm #{required_pakcages}"
       end
 
       def need_super_user_priviledge?
