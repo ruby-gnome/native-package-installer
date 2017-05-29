@@ -1,5 +1,22 @@
 # News
 
+## 1.0.2 - 2017-05-29
+
+### Improvements
+
+  * Supported DNF on Fedora.
+    [GitHub#3][Reported by Vít Ondruch]
+
+  * Supported MSYS2.
+
+### Fixes
+
+  * Fixed broken messages.
+
+### Thanks
+
+  * Vít Ondruch
+
 ## 1.0.1 - 2017-05-03
 
 ### Improvements
