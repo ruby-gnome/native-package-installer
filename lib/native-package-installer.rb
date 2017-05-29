@@ -33,8 +33,6 @@ class NativePackageInstaller
   end
 
   def install
-    return true if windows?
-
     package = @platform.package(@spec)
     return false if package.nil?
 
@@ -100,10 +98,6 @@ Failed to run '#{install_command}'.
   end
 
   private
-  def windows?
-    /mswin|mingw|cygwin/ === RUBY_PLATFORM
-  end
-
   def super_user?
     Process.uid.zero?
   end
