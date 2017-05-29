@@ -28,11 +28,11 @@ class NativePackageInstaller
           finder = ExecutableFinder.new("pacman")
           case RUBY_PLATFORM
           when "x86-mingw32"
-            Dir.glob("c:/msys*/mingw32/bin") do |bin|
+            Dir.glob("c:/msys{64,32,*}/usr/bin") do |bin|
               finder.append_path(bin)
             end
           when "x64-mingw32"
-            Dir.glob("c:/msys*/mingw64/bin") do |bin|
+            Dir.glob("c:/msys{64,*}/usr/bin") do |bin|
               finder.append_path(bin)
             end
           end
