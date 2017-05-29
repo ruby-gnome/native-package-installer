@@ -59,12 +59,7 @@ class NativePackageInstaller
       end
 
       def install_command
-        pacman = self.class.pacman_path
-        required_packages = [
-          "base-devel",
-          "#{self.class.package_prefix}-toolchain"
-        ].join(" ")
-        "#{pacman} -S --noconfirm #{required_packages}"
+        "#{self.class.pacman_path} -S --noconfirm"
       end
 
       def need_super_user_priviledge?
