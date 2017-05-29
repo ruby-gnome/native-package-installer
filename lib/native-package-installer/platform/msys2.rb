@@ -59,7 +59,9 @@ class NativePackageInstaller
       end
 
       def install_command
-        "#{self.class.pacman_path} -S --noconfirm"
+        pacman_dir, pacman = File.split(self.class.pacman_path)
+        ENV["PATH"] = [pacman_dir, ENV["PATH"]].join(File::PATH_SEPARATOR)
+        "#{pacman} -S --noconfirm"
       end
 
       def need_super_user_priviledge?
