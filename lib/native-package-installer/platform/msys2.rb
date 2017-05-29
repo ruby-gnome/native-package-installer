@@ -64,7 +64,7 @@ class NativePackageInstaller
           "base-devel",
           "#{self.class.package_prefix}-toolchain"
         ].join(" ")
-        "#{pacman} -S --noconfirm #{required_pakcages}"
+        "#{pacman} -S --noconfirm #{required_packages}"
       end
 
       def need_super_user_priviledge?
