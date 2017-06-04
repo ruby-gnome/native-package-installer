@@ -33,14 +33,19 @@ class NativePackageInstaller
   end
 end
 
+require "native-package-installer/platform/msys2"
+
 require "native-package-installer/platform/freebsd"
+
 require "native-package-installer/platform/debian"
 require "native-package-installer/platform/fedora"
 require "native-package-installer/platform/redhat"
 require "native-package-installer/platform/suse"
 require "native-package-installer/platform/alt-linux"
 require "native-package-installer/platform/arch-linux"
+
 require "native-package-installer/platform/homebrew"
+
 require "native-package-installer/platform/macports"
-require "native-package-installer/platform/msys2"
+
 require "native-package-installer/platform/unknown"
