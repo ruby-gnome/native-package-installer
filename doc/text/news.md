@@ -1,5 +1,11 @@
 # News
 
+## 1.0.4 - 2017-06-04
+
+### Fixes
+
+  * Fixed MSYS2 detection.
+
 ## 1.0.3 - 2017-05-29
 
 ### Improvements
