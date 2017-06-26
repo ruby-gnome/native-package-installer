@@ -45,5 +45,4 @@ Users can install both native packages and an extension library by one action,
   spec.add_development_dependency("bundler")
   spec.add_development_dependency("rake")
   spec.add_development_dependency("test-unit-rr")
-  spec.add_development_dependency("packnga")
 end
