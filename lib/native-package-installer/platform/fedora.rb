@@ -25,7 +25,7 @@ class NativePackageInstaller
       end
 
       def package(spec)
-        spec[:fedora] || spec[:rehat]
+        spec[:fedora] || spec[:redhat]
       end
 
       def install_command
