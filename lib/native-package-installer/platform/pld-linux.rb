@@ -15,7 +15,7 @@
 
 class NativePackageInstaller
   module Platform
-    class PldLinux
+    class PLDLinux
       Platform.register(self)
 
       class << self
