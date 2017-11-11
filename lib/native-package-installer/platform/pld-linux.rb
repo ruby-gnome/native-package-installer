@@ -25,7 +25,7 @@ class NativePackageInstaller
       end
 
       def package(spec)
-        spec[:arch_linux]
+        spec[:pld_linux] || spec[:arch_linux]
       end
 
       def install_command
