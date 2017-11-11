@@ -1,5 +1,26 @@
 # News
 
+## 1.0.5 - 2017-11-11
+
+### Improvements
+
+  * Removed needless Packnga development dependency.
+    [GitHub#4][Patch by HIGUCHI Daisuke]
+
+  * Added PLD Linux support.
+    [GitHub#6][Patch by Elan Ruusamäe]
+
+### Fixes
+
+  * Fixed a bug that `:redhat` package isn't used for Fedora platform.
+    [GitHub#5][Patch by HIGUCHI Daisuke]
+
+### Thanks
+
+  * HIGUCHI Daisuke
+
+  * Elan Ruusamäe
+
 ## 1.0.4 - 2017-06-04
 
 ### Fixes
