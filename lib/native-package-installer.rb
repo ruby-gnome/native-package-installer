@@ -37,7 +37,9 @@ class NativePackageInstaller
     return false if package.nil?
 
     package_name, *options = package
-    package_command_line = [package_name, *options].join(" ")
+    package_command_line = [package_name, *options].collect do |component|
+      Shellwords.escape(component)
+    end.join(" ")
 
     install_command = "#{@platform.install_command} #{package_command_line}"
     if have_priviledge?
