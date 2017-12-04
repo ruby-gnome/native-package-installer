@@ -1,5 +1,23 @@
 # News
 
+## 1.0.6 - 2017-12-05
+
+### Improvements
+
+  * Added meta character support in package name.
+    [GitHub#8][Reported by Mamoru TASAKA]
+
+### Fixes
+
+  * Removed needless ArchLinux fallback from PLD Linux.
+    [GitHub#7][Reported by Elan Ruusamäe]
+
+### Thanks
+
+  * Elan Ruusamäe
+
+  * Mamoru TASAKA
+
 ## 1.0.5 - 2017-11-11
 
 ### Improvements
