@@ -1,4 +1,4 @@
-# Copyright (C) 2017  Ruby-GNOME2 Project Team
+# Copyright (C) 2017-2019  Ruby-GNOME2 Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -27,7 +27,7 @@ class NativePackageInstaller
         def pacman_path
           finder = ExecutableFinder.new("pacman")
           case RUBY_PLATFORM
-          when "x86-mingw32"
+          when "i386-mingw32"
             Dir.glob("c:/msys{64,32,*}/usr/bin") do |bin|
               finder.append_path(bin)
             end
@@ -41,7 +41,7 @@ class NativePackageInstaller
 
         def package_prefix
           case RUBY_PLATFORM
-          when "x86-mingw32"
+          when "i386-mingw32"
             "mingw-w64-i686-"
           when "x64-mingw32"
             "mingw-w64-x86_64-"
