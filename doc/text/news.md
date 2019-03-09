@@ -1,5 +1,11 @@
 # News
 
+## 1.0.7 - 2019-03-09
+
+### Fixes
+
+  * Fixed 32bit MSYS2 detection.
+
 ## 1.0.6 - 2017-12-05
 
 ### Improvements
