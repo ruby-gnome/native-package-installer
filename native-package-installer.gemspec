@@ -1,4 +1,4 @@
-# Copyright (C) 2013  Ruby-GNOME2 Project Team
+# Copyright (C) 2013-2019  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -33,7 +33,7 @@ native-package-installer helps to install native packages on "gem install".
 Users can install both native packages and an extension library by one action,
 "gem install".
   DESCRIPTION
-  spec.homepage = "https://github.com/ruby-gnome2/native-package-installer"
+  spec.homepage = "https://github.com/ruby-gnome/native-package-installer"
   spec.licenses = ["LGPL-3+"]
   spec.require_paths = ["lib"]
 
