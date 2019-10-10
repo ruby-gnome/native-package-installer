@@ -1,5 +1,11 @@
 # News
 
+## 1.0.8 - 2019-10-10
+
+### Improvements
+
+  * Enabled PowerTools repository on CentOS 8.
+
 ## 1.0.7 - 2019-03-09
 
 ### Fixes
