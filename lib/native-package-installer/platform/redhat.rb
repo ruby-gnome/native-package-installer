@@ -1,4 +1,4 @@
-# Copyright (C) 2017  Ruby-GNOME2 Project Team
+# Copyright (C) 2017-2019  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -29,11 +29,21 @@ class NativePackageInstaller
       end
 
       def install_command
-        "yum install -y"
+        if major_version >= 8
+          "dnf install --enablerepo=PowerTools -y"
+        else
+          "yum install -y"
+        end
       end
 
       def need_super_user_priviledge?
         true
+      end
+
+      private
+      def major_version
+        major_version_string = File.read("/etc/redhat-release")[/(\d+)/, 0]
+        Integer(major_version_string, 10)
       end
     end
   end
