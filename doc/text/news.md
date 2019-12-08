@@ -5,7 +5,7 @@
 ### Improvements
 
   * Added Ubuntu support.
-    [Patch by İsmail Arılık](https://github.com/ruby-gnome/native-package-installer/pull/8)
+    [Patch by İsmail Arılık](https://github.com/ruby-gnome/native-package-installer/pull/9)
 
 ## 1.0.8 - 2019-10-10
 
