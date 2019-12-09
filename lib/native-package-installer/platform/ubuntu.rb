@@ -15,7 +15,7 @@
 
 class NativePackageInstaller
   module Platform
-    class Ubuntu
+    class Ubuntu < Debian
       Platform.register(self)
 
       class << self
@@ -26,14 +26,6 @@ class NativePackageInstaller
 
       def package(spec)
         spec[:ubuntu]
-      end
-
-      def install_command
-        "apt install -V -y"
-      end
-
-      def need_super_user_priviledge?
-        true
       end
     end
   end
