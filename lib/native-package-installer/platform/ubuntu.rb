@@ -25,7 +25,7 @@ class NativePackageInstaller
       end
 
       def package(spec)
-        spec[:ubuntu]
+        spec[:ubuntu] || spec[:debian]
       end
     end
   end
