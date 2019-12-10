@@ -37,6 +37,7 @@ require "native-package-installer/platform/msys2"
 
 require "native-package-installer/platform/freebsd"
 
+require "native-package-installer/platform/ubuntu"
 require "native-package-installer/platform/debian"
 require "native-package-installer/platform/fedora"
 require "native-package-installer/platform/redhat"
