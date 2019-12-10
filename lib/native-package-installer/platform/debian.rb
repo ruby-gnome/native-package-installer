@@ -20,7 +20,10 @@ class NativePackageInstaller
 
       class << self
         def current_platform?
-          File.exist?("/etc/debian_version")
+          return false unless File.exist?("/etc/os-release")
+          File.readlines("/etc/os-release").any? do |line|
+            line.chomp == "ID=debian"
+          end
         end
       end
 
