@@ -20,7 +20,10 @@ class NativePackageInstaller
 
       class << self
         def current_platform?
-          File.exist?("/etc/lsb-release")
+          return false unless File.exist?('/etc/lsb-release')
+          File.readlines('/etc/lsb-release').any? do |line|
+            line.chomp == 'DISTRIB_ID=Ubuntu'
+          end
         end
       end
 
