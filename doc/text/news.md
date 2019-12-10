@@ -1,5 +1,16 @@
 # News
 
+## 1.0.9 - 2019-12-10
+
+### Improvements
+
+  * Added support for Ubuntu specific package.
+    [GitHub#9][Patch by İsmail Arılık]
+
+### Thanks
+
+  * İsmail Arılık
+
 ## 1.0.8 - 2019-10-10
 
 ### Improvements
