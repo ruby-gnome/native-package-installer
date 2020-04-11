@@ -1,4 +1,4 @@
-# native-package-installer 
+# native-package-installer
 
 [![Gem Version](https://badge.fury.io/rb/native-package-installer.svg)](https://badge.fury.io/rb/native-package-installer)
 
@@ -7,7 +7,7 @@ that depends on native packages. It bores users because users need to
 install native packages and an extension library separately.
 native-package-installer helps to install native packages on "gem install".
 Users can install both native packages and an extension library by one action,
-"gem install". 
+"gem install".
 
 ## License
 
