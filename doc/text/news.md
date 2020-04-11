@@ -1,5 +1,21 @@
 # News
 
+## 1.1.0 - 2020-04-12
+
+### Improvements
+
+  * Updated README.
+    [GitHub#11][Patch by kojix2]
+
+  * Added support for Raspbian.
+    [GitHub#12][Patch by xetum]
+
+### Thanks
+
+  * kojix2
+
+  * xetum
+
 ## 1.0.9 - 2019-12-10
 
 ### Improvements
