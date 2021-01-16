@@ -1,5 +1,11 @@
 # News
 
+## 1.1.1 - 2021-01-17
+
+### Improvements
+
+  * [CentOS 8] Followed the powertools repository name change.
+
 ## 1.1.0 - 2020-04-12
 
 ### Improvements
