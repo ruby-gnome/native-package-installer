@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2019  Ruby-GNOME Project Team
+# Copyright (C) 2013-2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -14,5 +14,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class NativePackageInstaller
-  VERSION = "1.1.0"
+  VERSION = "1.1.1"
 end
