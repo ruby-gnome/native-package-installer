@@ -1,0 +1,50 @@
+name: Test
+on:
+  - push
+  - pull_request
+jobs:
+  docker:
+    name: ${{ matrix.distribution }}
+    strategy:
+      fail-fast: false
+      matrix:
+        distribution:
+          - almalinux
+          - alt-linux
+          - arch-linux
+          - debian
+          - fedora
+          - opensuse
+          # - pld-linux
+          - ubuntu
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker image
+        run: |
+          docker-compose build ${{ matrix.distribution }}
+      - name: Run
+        run: |
+          docker-compose run ${{ matrix.distribution }}
+
+  native:
+    name: ${{ matrix.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runs-on:
+          - macos
+          - ubuntu
+          - windows
+    runs-on: ${{ matrix.runs-on }}-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v2
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0"
+          bundler-cache: true
+      - run: bundle exec rake test
+      - run: rake install
+      - run: gem install glib2

@@ -1,4 +1,4 @@
-# Copyright (C) 2019  Ruby-GNOME Project Team
+# Copyright (C) 2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require "native-package-installer/platform/debian"
+require_relative "debian"
 
 class NativePackageInstaller
   module Platform
@@ -22,10 +22,14 @@ class NativePackageInstaller
 
       class << self
         def current_platform?
-          return false unless File.exist?("/etc/lsb-release")
-          File.readlines("/etc/lsb-release").any? do |line|
-            line.chomp == "DISTRIB_ID=Ubuntu"
+          os_release = OSRelease.new
+          case os_release.id
+          when "ubuntu"
+            return true
+          else
+            return true if os_release.id_like.include?("ubuntu")
           end
+          false
         end
       end
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2021  Ruby-GNOME Project Team
+# Copyright (C) 2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -14,33 +14,41 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class NativePackageInstaller
-  module Platform
-    class Debian
-      Platform.register(self)
+  class OSRelease
+    include Enumerable
 
-      class << self
-        def current_platform?
-          os_release = OSRelease.new
-          case os_release.id
-          when "debian", "raspbian"
-            return true
-          else
-            return true if os_release.id_like.include?("debian")
-          end
-          false
+    def initialize
+      parse
+    end
+
+    def each(&block)
+      @variables.each(&block)
+    end
+
+    def [](key)
+      @variables[key]
+    end
+
+    def id
+      self["ID"]
+    end
+
+    def id_like
+      (self["ID_LIKE"] || "").split(/ /)
+    end
+
+    private
+    def parse
+      @variables = {}
+      path = "/etc/os-release"
+      return unless File.exist?(path)
+      File.foreach(path) do |line|
+        key, value = line.strip.split("=", 2)
+        next if value.nil?
+        if value.start_with?("\"") and value.end_with?("\"")
+          value = value[1..-2]
         end
-      end
-
-      def package(spec)
-        spec[:debian]
-      end
-
-      def install_command
-        "apt-get install -V -y"
-      end
-
-      def need_super_user_priviledge?
-        true
+        @variables[key] = value
       end
     end
   end

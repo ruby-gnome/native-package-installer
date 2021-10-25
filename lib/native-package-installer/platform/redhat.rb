@@ -1,4 +1,4 @@
-# Copyright (C) 2017-2019  Ruby-GNOME Project Team
+# Copyright (C) 2017-2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -20,7 +20,8 @@ class NativePackageInstaller
 
       class << self
         def current_platform?
-          File.exist?("/etc/redhat-release")
+          os_release = OSRelease.new
+          os_release.id_like.include?("rhel")
         end
       end
 

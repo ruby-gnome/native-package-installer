@@ -1,4 +1,4 @@
-# Copyright (C) 2017-2019  Ruby-GNOME Project Team
+# Copyright (C) 2017-2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -23,31 +23,44 @@ class NativePackageInstaller
       end
 
       def detect
-        platform_class = PLATFORM_CLASSES.find do |platform_class|
-          platform_class.current_platform?
+        PLATFORM_CLASSES.reverse_each do |platform_class|
+          return platform_class.new if platform_class.current_platform?
         end
-        platform_class ||= Unknown
-        platform_class.new
+        Unknown.new
       end
     end
   end
 end
 
-require "native-package-installer/platform/msys2"
 
-require "native-package-installer/platform/freebsd"
+# Windows
+require_relative "platform/msys2"
 
-require "native-package-installer/platform/alt-linux"
-require "native-package-installer/platform/arch-linux"
-require "native-package-installer/platform/debian"
-require "native-package-installer/platform/fedora"
-require "native-package-installer/platform/pld-linux"
-require "native-package-installer/platform/redhat"
-require "native-package-installer/platform/suse"
-require "native-package-installer/platform/ubuntu"
 
-require "native-package-installer/platform/homebrew"
+# macOS
+require_relative "platform/macports"
 
-require "native-package-installer/platform/macports"
+require_relative "platform/homebrew"
 
-require "native-package-installer/platform/unknown"
+
+# FreeBSD
+require_relative "platform/freebsd"
+
+
+# Linux
+require_relative "platform/arch-linux"
+
+require_relative "platform/debian"
+require_relative "platform/ubuntu"
+require_relative "platform/alt-linux"
+
+require_relative "platform/pld-linux"
+
+require_relative "platform/redhat"
+require_relative "platform/fedora"
+
+require_relative "platform/suse"
+
+
+# Fallback
+require_relative "platform/unknown"

@@ -1,4 +1,6 @@
-# Copyright (C) 2013-2021  Ruby-GNOME Project Team
+#!/bin/bash
+#
+# Copyright (C) 2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -13,35 +15,16 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-class NativePackageInstaller
-  module Platform
-    class Debian
-      Platform.register(self)
+set -eux
 
-      class << self
-        def current_platform?
-          os_release = OSRelease.new
-          case os_release.id
-          when "debian", "raspbian"
-            return true
-          else
-            return true if os_release.id_like.include?("debian")
-          end
-          false
-        end
-      end
+cp -r /native-package-installer native-package-installer.build
+cd native-package-installer.build
 
-      def package(spec)
-        spec[:debian]
-      end
+if sudo which rake; then
+  sudo rake install
+else
+  rake install
+fi
 
-      def install_command
-        "apt-get install -V -y"
-      end
-
-      def need_super_user_priviledge?
-        true
-      end
-    end
-  end
-end
+export GNUMAKEFLAGS="-j$(nproc)"
+gem install --user-install glib2

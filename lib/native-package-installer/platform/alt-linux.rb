@@ -1,4 +1,4 @@
-# Copyright (C) 2017  Ruby-GNOME Project Team
+# Copyright (C) 2017-2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -13,21 +13,28 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require "native-package-installer/platform/debian"
-
 class NativePackageInstaller
   module Platform
-    class ALTLinux < Debian
+    class ALTLinux
       Platform.register(self)
 
       class << self
         def current_platform?
-          File.exist?("/etc/altlinux-release")
+          os_release = OSRelease.new
+          os_release.id == "altlinux"
         end
       end
 
       def package(spec)
         spec[:alt_linux]
+      end
+
+      def install_command
+        "apt-get install -V -y"
+      end
+
+      def need_super_user_priviledge?
+        true
       end
     end
   end

@@ -1,4 +1,4 @@
-# Copyright (C) 2017  Ruby-GNOME Project Team
+# Copyright (C) 2017-2021  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -15,10 +15,12 @@
 
 require "shellwords"
 
-require "native-package-installer/version"
+require_relative "native-package-installer/version"
 
-require "native-package-installer/executable-finder"
-require "native-package-installer/platform"
+require_relative "native-package-installer/executable-finder"
+require_relative "native-package-installer/os-release"
+
+require_relative "native-package-installer/platform"
 
 class NativePackageInstaller
   class << self

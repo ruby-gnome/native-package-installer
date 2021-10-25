@@ -1,0 +1,91 @@
+# Copyright (C) 2021  Ruby-GNOME Project Team
+#
+# This library is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+version: "3.5"
+
+services:
+  almalinux:
+    build:
+      context: .
+      dockerfile: dockerfiles/almalinux.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  alt-linux:
+    build:
+      context: .
+      dockerfile: dockerfiles/alt-linux.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  arch-linux:
+    build:
+      context: .
+      dockerfile: dockerfiles/arch-linux.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  debian:
+    build:
+      context: .
+      dockerfile: dockerfiles/debian.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  fedora:
+    build:
+      context: .
+      dockerfile: dockerfiles/fedora.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  opensuse:
+    build:
+      context: .
+      dockerfile: dockerfiles/opensuse.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  pld-linux:
+    build:
+      context: .
+      dockerfile: dockerfiles/pld-linux.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    security_opt:
+      - seccomp:unconfined
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  ubuntu:
+    build:
+      context: .
+      dockerfile: dockerfiles/ubuntu.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
