@@ -65,7 +65,8 @@ jobs:
         if: |
           matrix.runs-on == 'windows'
         run: |
-          pushd ruby-gnome/glib2
+          gem install pkg-config
+          cd ruby-gnome\glib2
           ridk exec ruby extconf.rb
           ridk exec make
           ridk exec ruby -Ilib -Iext/glib2 -e "require 'glib2'"
