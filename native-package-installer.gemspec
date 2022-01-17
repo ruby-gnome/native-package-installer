@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2019  Ruby-GNOME Project Team
+# Copyright (C) 2013-2022  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -40,7 +40,6 @@ Users can install both native packages and an extension library by one action,
   spec.files = ["README.md", "Rakefile"]
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("doc/text/**/*.*")
-  spec.test_files = Dir.glob("test/**/*.rb")
 
   spec.add_development_dependency("bundler")
   spec.add_development_dependency("rake")
