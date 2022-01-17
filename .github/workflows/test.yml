@@ -37,13 +37,16 @@ jobs:
           - macos
           - ubuntu
           - windows
+        ruby-version:
+          - "3.1"
+          - "3.0"
     runs-on: ${{ matrix.runs-on }}-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.0"
+          ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
       - run: bundle exec rake test
       - run: rake install
