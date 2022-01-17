@@ -1,6 +1,6 @@
 # -*- ruby -*-
 #
-# Copyright (C) 2013  Ruby-GNOME Project Team
+# Copyright (C) 2013-2022  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -18,3 +18,7 @@
 source "https://rubygems.org/"
 
 gemspec
+
+gem "bundler"
+gem "rake"
+gem "test-unit-rr"

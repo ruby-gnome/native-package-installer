@@ -40,8 +40,4 @@ Users can install both native packages and an extension library by one action,
   spec.files = ["README.md", "Rakefile"]
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("doc/text/**/*.*")
-
-  spec.add_development_dependency("bundler")
-  spec.add_development_dependency("rake")
-  spec.add_development_dependency("test-unit-rr")
 end
