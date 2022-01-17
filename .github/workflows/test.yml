@@ -52,18 +52,18 @@ jobs:
       - run: rake install
       - run: gem install glib2
         if: |
-          matrix.runs-on != 'windows-latest'
+          matrix.runs-on != 'windows'
       # "gem install" installs native package on Windows.
       # So we need to use extconf.rb to test native-package-installer.
       - uses: actions/checkout@v2
         if: |
-          matrix.runs-on == 'windows-latest'
+          matrix.runs-on == 'windows'
         with:
           repository: ruby-gnome/ruby-gnome
           path: ruby-gnome
       - name: Install glib2 from source
         if: |
-          matrix.runs-on == 'windows-latest'
+          matrix.runs-on == 'windows'
         run: |
           pushd ruby-gnome/glib2
           ridk exec ruby extconf.rb
