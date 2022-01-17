@@ -1,5 +1,15 @@
 # News
 
+## 1.1.2 - 2022-01-18
+
+### Improvements
+
+  * Changed priority for Homebrew on Linux. System package manager is preferred.
+
+  * Improved OpenSuSE detection.
+
+  * Added support for Ruby 3.1 based RubyInstaller.
+
 ## 1.1.1 - 2021-01-17
 
 ### Improvements
