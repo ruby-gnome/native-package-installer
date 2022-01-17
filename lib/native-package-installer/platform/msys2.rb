@@ -31,7 +31,7 @@ class NativePackageInstaller
             Dir.glob("c:/msys{64,32,*}/usr/bin") do |bin|
               finder.append_path(bin)
             end
-          when "x64-mingw32"
+          when "x64-mingw32", "x64-mingw-ucrt"
             Dir.glob("c:/msys{64,*}/usr/bin") do |bin|
               finder.append_path(bin)
             end
@@ -45,6 +45,8 @@ class NativePackageInstaller
             "mingw-w64-i686-"
           when "x64-mingw32"
             "mingw-w64-x86_64-"
+          when "x64-mingw-ucrt"
+            "mingw-w64-ucrt-x86_64-"
           else
             nil
           end
