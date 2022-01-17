@@ -29,7 +29,7 @@ jobs:
           docker-compose run ${{ matrix.distribution }}
 
   native:
-    name: ${{ matrix.runs-on }}
+    name: ${{ matrix.ruby-version }} on ${{ matrix.runs-on }}
     strategy:
       fail-fast: false
       matrix:
