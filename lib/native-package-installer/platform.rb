@@ -33,10 +33,6 @@ class NativePackageInstaller
 end
 
 
-# Windows
-require_relative "platform/msys2"
-
-
 # macOS
 require_relative "platform/macports"
 
@@ -60,6 +56,10 @@ require_relative "platform/redhat"
 require_relative "platform/fedora"
 
 require_relative "platform/suse"
+
+
+# Windows
+require_relative "platform/msys2"
 
 
 # Fallback
