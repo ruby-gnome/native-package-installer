@@ -1,5 +1,11 @@
 # News
 
+## 1.1.3 - 2022-01-18
+
+### Fixes
+
+  * Fixed wrong package install on Windows.
+
 ## 1.1.2 - 2022-01-18
 
 ### Improvements
