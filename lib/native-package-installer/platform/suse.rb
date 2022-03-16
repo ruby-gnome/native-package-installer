@@ -26,7 +26,7 @@ class NativePackageInstaller
       end
 
       def package(spec)
-        spec[:suse] || spec[:fedora] || spec[:redhat]
+        spec[:suse] || spec[:fedora] || spec[:rhel] || spec[:redhat]
       end
 
       def install_command

@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require_relative "redhat"
+require_relative "red-hat-enterprise-linux"
 
 class NativePackageInstaller
   module Platform

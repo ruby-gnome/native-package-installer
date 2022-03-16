@@ -15,7 +15,7 @@
 
 class NativePackageInstaller
   module Platform
-    class RedHat
+    class RedHatEnterPriseLinux
       Platform.register(self)
 
       class << self
@@ -26,7 +26,7 @@ class NativePackageInstaller
       end
 
       def package(spec)
-        spec[:redhat]
+        spec[:rhel] || spec[:redhat]
       end
 
       def install_command

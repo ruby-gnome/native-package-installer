@@ -52,7 +52,7 @@ require_relative "platform/alt-linux"
 
 require_relative "platform/pld-linux"
 
-require_relative "platform/redhat"
+require_relative "platform/red-hat-enterprise-linux"
 require_relative "platform/amazon-linux"
 require_relative "platform/fedora"
 
