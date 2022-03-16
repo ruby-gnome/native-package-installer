@@ -1,4 +1,4 @@
-# Copyright (C) 2021  Ruby-GNOME Project Team
+# Copyright (C) 2021-2022  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -29,6 +29,15 @@ services:
     build:
       context: .
       dockerfile: dockerfiles/alt-linux.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
+  amazon-linux:
+    build:
+      context: .
+      dockerfile: dockerfiles/amazon-linux.dockerfile
     volumes:
       - .:/native-package-installer:delegated
     command:

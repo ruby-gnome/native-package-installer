@@ -1,4 +1,4 @@
-# Copyright (C) 2017-2021  Ruby-GNOME Project Team
+# Copyright (C) 2017-2022  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -53,6 +53,7 @@ require_relative "platform/alt-linux"
 require_relative "platform/pld-linux"
 
 require_relative "platform/redhat"
+require_relative "platform/amazon-linux"
 require_relative "platform/fedora"
 
 require_relative "platform/suse"

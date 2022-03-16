@@ -11,6 +11,7 @@ jobs:
         distribution:
           - almalinux
           - alt-linux
+          - amazon-linux
           - arch-linux
           - debian
           - fedora
