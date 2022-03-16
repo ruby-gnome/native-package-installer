@@ -1,5 +1,20 @@
 # News
 
+## 1.1.4 - 2022-03-17
+
+### Improvements
+
+  * Added support for Amazon Linux.
+    [GitHub#14][Reported by docusend1]
+
+  * Renamed the key for Red Hat Enterprise Linux based system such as
+    AlmaLinux and CentOS to `:rhel` from `:redhat`. `:redhat` still
+    can be used to keep backward compatibility.
+
+### Thanks
+
+  * docusend1
+
 ## 1.1.3 - 2022-01-18
 
 ### Fixes
