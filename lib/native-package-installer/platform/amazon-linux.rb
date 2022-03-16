@@ -17,7 +17,7 @@ require_relative "red-hat-enterprise-linux"
 
 class NativePackageInstaller
   module Platform
-    class AmazonLinux < RedHat
+    class AmazonLinux < RedHatEnterpriseLinux
       Platform.register(self)
 
       class << self

@@ -15,7 +15,7 @@
 
 class NativePackageInstaller
   module Platform
-    class RedHatEnterPriseLinux
+    class RedHatEnterpriseLinux
       Platform.register(self)
 
       class << self
