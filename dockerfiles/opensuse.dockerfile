@@ -21,7 +21,7 @@ RUN \
     make \
     ruby2.5-devel \
     ruby2.5-rubygem-bundler \
-    ruby2.5-rubygem-rake-13.0 \
+    ruby2.5-rubygem-rake \
     sudo \
     which
 
