@@ -1,4 +1,4 @@
-# Copyright (C) 2021  Ruby-GNOME Project Team
+# Copyright (C) 2021-2022  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -13,7 +13,8 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-FROM almalinux
+ARG VERSION
+FROM almalinux:${VERSION}
 
 RUN \
   dnf install -y \

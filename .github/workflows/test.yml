@@ -9,7 +9,8 @@ jobs:
       fail-fast: false
       matrix:
         distribution:
-          - almalinux
+          - almalinux-8
+          - almalinux-9
           - alt-linux
           - amazon-linux
           - arch-linux

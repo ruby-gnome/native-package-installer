@@ -30,7 +30,9 @@ class NativePackageInstaller
       end
 
       def install_command
-        if major_version >= 8
+        if major_version >= 9
+          "dnf install --enablerepo=crb -y"
+        elsif major_version >= 8
           "dnf install --enablerepo=powertools -y"
         else
           "yum install -y"
