@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # Copyright (C) 2022  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
@@ -13,21 +15,16 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-FROM gentoo/stage3
+set -eux
 
-RUN \
-  ( \
-    echo "BINPKG_FORMAT=\"gpkg\""; \
-    echo "FEATURES=\"buildpkg\""; \
-    echo "MAKEOPTS=\"-j$(($(nproc) +1))\""; \
-  ) >> /etc/portage/make.conf
+emerge \
+  --usepkg \
+  app-admin/sudo \
+  dev-lang/ruby
 
-RUN \
-  useradd --user-group --create-home native-package-installer
+echo "native-package-installer ALL=(ALL:ALL) NOPASSWD:ALL" | \
+  EDITOR=tee visudo -f /etc/sudoers.d/native-package-installer
 
-# RUN \
-#   echo "native-package-installer ALL=(ALL:ALL) NOPASSWD:ALL" | \
-#     EDITOR=tee visudo -f /etc/sudoers.d/native-package-installer
-
-# USER native-package-installer
-# WORKDIR /home/native-package-installer
+cd ~native-package-installer
+sudo -u native-package-installer -H \
+  $(dirname $0)/run-test.sh "$@"

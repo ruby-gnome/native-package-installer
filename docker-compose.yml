@@ -83,14 +83,22 @@ services:
     command:
       /native-package-installer/dockerfiles/run-test.sh
 
+  gentoo-linux-portage:
+    image: gentoo/portage
+    command:
+      /bin/true
+
   gentoo-linux:
     build:
       context: .
       dockerfile: dockerfiles/gentoo-linux.dockerfile
     volumes:
       - .:/native-package-installer:delegated
+      - .cache/gentoo-linux/binpkgs:/var/cache/binpkgs:delegated
+    volumes_from:
+      - gentoo-linux-portage
     command:
-      /native-package-installer/dockerfiles/run-test.sh
+      /native-package-installer/dockerfiles/run-test-gentoo-linux.sh
 
   opensuse:
     build:
