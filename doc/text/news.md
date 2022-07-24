@@ -1,5 +1,13 @@
 # News
 
+## 1.1.5 - 2022-07-24
+
+### Improvements
+
+  * Added support for Red Hat Enterprise Linux 9.
+
+  * Added support for Gentoo Linux.
+
 ## 1.1.4 - 2022-03-17
 
 ### Improvements
