@@ -24,13 +24,11 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3
-      - name: Build Docker image
-        run: |
-          docker-compose build ${{ matrix.distribution }}
       - name: Prepare cache for Gentoo Linux
         if: |
           matrix.distribution == 'gentoo-linux'
         run: |
+          docker pull gentoo/portage
           gentoo_portage_id=$(docker image inspect gentoo/portage | jq -r ".[0].Id")
           echo "GENTOO_PORTAGE_ID=${gentoo_portage_id}" >> "${GITHUB_ENV}"
       - name: Cache binary packages for Gentoo Linux
@@ -41,6 +39,9 @@ jobs:
           path: .cache
           key: ${{ matrix.distribution }}-${{ env.GENTOO_PORTAGE_ID }}
           restore-keys: ${{ matrix.distribution }}-
+      - name: Build Docker image
+        run: |
+          docker-compose build ${{ matrix.distribution }}
       - name: Run
         run: |
           docker-compose run --rm ${{ matrix.distribution }}

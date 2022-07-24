@@ -27,4 +27,4 @@ echo "native-package-installer ALL=(ALL:ALL) NOPASSWD:ALL" | \
 
 cd ~native-package-installer
 sudo -u native-package-installer -H \
-  $(dirname $0)/run-test.sh "$@"
+  $(dirname $0)/run-test.sh --no-user-install "$@"
