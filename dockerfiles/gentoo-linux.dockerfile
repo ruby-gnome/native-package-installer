@@ -17,20 +17,17 @@ FROM gentoo/portage as portage
 
 FROM gentoo/stage3
 
+COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
+
 RUN \
   echo "MAKEOPTS=\"-j$(($(nproc) +1))\"" >> /etc/portage/make.conf
-
-COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
 RUN \
   emerge \
     --getbinpkg \
     --usepkg \
     app-admin/sudo \
-    dev-lang/ruby \
-    sys-apps/which \
-    sys-devel/gcc \
-    sys-devel/make
+    dev-lang/ruby
 
 RUN \
   useradd --user-group --create-home native-package-installer
