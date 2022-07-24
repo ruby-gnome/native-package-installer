@@ -16,6 +16,7 @@ jobs:
           - arch-linux
           - debian
           - fedora
+          - gentoo-linux
           - opensuse
           # - pld-linux
           - ubuntu

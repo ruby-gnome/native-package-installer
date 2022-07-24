@@ -45,6 +45,7 @@ require_relative "platform/freebsd"
 
 # Linux
 require_relative "platform/arch-linux"
+require_relative "platform/gentoo-linux"
 
 require_relative "platform/debian"
 require_relative "platform/ubuntu"
