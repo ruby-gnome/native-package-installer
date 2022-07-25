@@ -27,4 +27,4 @@ else
 fi
 
 export GNUMAKEFLAGS="-j$(nproc)"
-gem install --user-install glib2
+gem install --user-install glib2 "$@"
