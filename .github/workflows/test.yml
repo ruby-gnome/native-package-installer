@@ -12,6 +12,7 @@ jobs:
           - almalinux-9
           - alt-linux
           - amazon-linux-2
+          - amazon-linux-2023
           - arch-linux
           - conda
           - debian

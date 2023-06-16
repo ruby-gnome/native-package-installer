@@ -45,6 +45,15 @@ services:
     command:
       /native-package-installer/dockerfiles/run-test.sh
 
+  amazon-linux-2023:
+    build:
+      context: .
+      dockerfile: dockerfiles/amazon-linux-2023.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
   arch-linux:
     build:
       context: .
