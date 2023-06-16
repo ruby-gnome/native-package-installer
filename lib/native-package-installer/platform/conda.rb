@@ -1,5 +1,3 @@
-#!/bin/bash
-#
 # Copyright (C) 2023  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
@@ -15,17 +13,28 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-set -eux
+class NativePackageInstaller
+  module Platform
+    class Conda
+      Platform.register(self)
 
-rm -rf native-package-installer.build
-cp -r /native-package-installer native-package-installer.build
-cd native-package-installer.build
+      class << self
+        def current_platform?
+          ExecutableFinder.exist?("conda")
+        end
+      end
 
-if sudo which rake; then
-  sudo rake install
-else
-  rake install
-fi
+      def package(spec)
+        spec[:conda]
+      end
 
-export GNUMAKEFLAGS="-j$(nproc)"
-gem install --user-install cairo "$@"
+      def install_command
+        "conda install -c conda-forge"
+      end
+
+      def need_super_user_priviledge?
+        false
+      end
+    end
+  end
+end

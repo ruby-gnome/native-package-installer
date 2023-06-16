@@ -1,4 +1,4 @@
-# Copyright (C) 2017-2022  Ruby-GNOME Project Team
+# Copyright (C) 2017-2023  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -32,11 +32,8 @@ class NativePackageInstaller
   end
 end
 
-
 # macOS
 require_relative "platform/macports"
-
-require_relative "platform/homebrew"
 
 
 # FreeBSD
@@ -62,6 +59,11 @@ require_relative "platform/suse"
 
 # Windows
 require_relative "platform/msys2"
+
+
+# Platform independent
+require_relative "platform/homebrew"
+require_relative "platform/conda"
 
 
 # Fallback

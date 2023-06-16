@@ -1,5 +1,3 @@
-#!/bin/bash
-#
 # Copyright (C) 2023  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
@@ -15,17 +13,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-set -eux
+FROM continuumio/miniconda3
 
-rm -rf native-package-installer.build
-cp -r /native-package-installer native-package-installer.build
-cd native-package-installer.build
-
-if sudo which rake; then
-  sudo rake install
-else
-  rake install
-fi
-
-export GNUMAKEFLAGS="-j$(nproc)"
-gem install --user-install cairo "$@"
+RUN \
+  conda install -c conda-forge -y --quiet \
+    compilers \
+    make \
+    ruby
