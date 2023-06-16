@@ -22,6 +22,7 @@ emerge \
   app-admin/sudo \
   dev-lang/ruby
 
+mkdir -p /etc/sudoers.d
 echo "native-package-installer ALL=(ALL:ALL) NOPASSWD:ALL" | \
   EDITOR=tee visudo -f /etc/sudoers.d/native-package-installer
 
