@@ -27,5 +27,7 @@ else
   rake install
 fi
 
+gem list
+
 export GNUMAKEFLAGS="-j$(nproc)"
 gem install --user-install cairo "$@"
