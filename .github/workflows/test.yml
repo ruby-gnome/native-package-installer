@@ -11,7 +11,7 @@ jobs:
         distribution:
           - almalinux-9
           - alt-linux
-          - amazon-linux
+          - amazon-linux-2
           - arch-linux
           - conda
           - debian

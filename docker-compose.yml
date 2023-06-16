@@ -36,10 +36,10 @@ services:
     command:
       /native-package-installer/dockerfiles/run-test.sh
 
-  amazon-linux:
+  amazon-linux-2:
     build:
       context: .
-      dockerfile: dockerfiles/amazon-linux.dockerfile
+      dockerfile: dockerfiles/amazon-linux-2.dockerfile
     volumes:
       - .:/native-package-installer:delegated
     command:
