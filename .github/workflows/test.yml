@@ -14,6 +14,7 @@ jobs:
           - alt-linux
           - amazon-linux
           - arch-linux
+          - conda
           - debian
           - fedora
           - gentoo-linux
