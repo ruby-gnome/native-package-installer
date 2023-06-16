@@ -16,17 +16,6 @@
 version: "3.5"
 
 services:
-  almalinux-8:
-    build:
-      context: .
-      dockerfile: dockerfiles/almalinux.dockerfile
-      args:
-        VERSION: "8"
-    volumes:
-      - .:/native-package-installer:delegated
-    command:
-      /native-package-installer/dockerfiles/run-test.sh
-
   almalinux-9:
     build:
       context: .
