@@ -1,5 +1,13 @@
 # News
 
+## 1.1.6 - 2023-06-18
+
+### Improvements
+
+  * Added support for conda.
+
+  * Added support for Amazon Linux 2023.
+
 ## 1.1.5 - 2022-07-24
 
 ### Improvements
