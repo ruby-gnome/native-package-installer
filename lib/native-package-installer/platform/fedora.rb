@@ -1,4 +1,4 @@
-# Copyright (C) 2021  Ruby-GNOME Project Team
+# Copyright (C) 2021-2023  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -21,7 +21,7 @@ class NativePackageInstaller
       class << self
         def current_platform?
           os_release = OSRelease.new
-          os_release.id == "fedora"
+          os_release.id_like.include?("fedora")
         end
       end
 
