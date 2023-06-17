@@ -21,7 +21,7 @@ class NativePackageInstaller
       class << self
         def current_platform?
           os_release = OSRelease.new
-          os_release.id_like.include?("fedora")
+          os_release.id == "fedora" or os_release.id_like.include?("fedora")
         end
       end
 
