@@ -51,8 +51,9 @@ require_relative "platform/alt-linux"
 require_relative "platform/pld-linux"
 
 require_relative "platform/red-hat-enterprise-linux"
-require_relative "platform/amazon-linux"
+require_relative "platform/amazon-linux-2"
 require_relative "platform/fedora"
+require_relative "platform/amazon-linux-2023"
 
 require_relative "platform/suse"
 

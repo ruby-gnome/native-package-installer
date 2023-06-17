@@ -1,4 +1,4 @@
-# Copyright (C) 2022  Ruby-GNOME Project Team
+# Copyright (C) 2023  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -13,26 +13,26 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require_relative "red-hat-enterprise-linux"
+require_relative "fedora"
 
 class NativePackageInstaller
   module Platform
-    class AmazonLinux < RedHatEnterpriseLinux
+    class AmazonLinux2023 < Fedora
       Platform.register(self)
 
       class << self
         def current_platform?
           os_release = OSRelease.new
-          os_release.id == "amzn"
+          os_release.id == "amzn" and os_release.version == "2023"
         end
       end
 
       def package(spec)
-        spec[:amazon_linux] || super
+        spec[:amazon_linux_2023] || spec[:amazon_linux] || super
       end
 
       def install_command
-        "yum install -y"
+        "dnf install -y"
       end
     end
   end

@@ -37,6 +37,10 @@ class NativePackageInstaller
       (self["ID_LIKE"] || "").split(/ /)
     end
 
+    def version
+      self["VERSION"]
+    end
+
     private
     def parse
       @variables = {}
