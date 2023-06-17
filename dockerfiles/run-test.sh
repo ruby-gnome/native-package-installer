@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 #
 # Copyright (C) 2023  Ruby-GNOME Project Team
 #
@@ -26,8 +26,6 @@ if sudo which rake; then
 else
   rake install
 fi
-
-gem list
 
 export GNUMAKEFLAGS="-j$(nproc)"
 gem install --user-install cairo "$@"
