@@ -78,7 +78,7 @@ jobs:
           matrix.runs-on != 'windows'
       # "gem install" installs native package on Windows.
       # So we need to use extconf.rb to test native-package-installer.
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         if: |
           matrix.runs-on == 'windows'
         with:
