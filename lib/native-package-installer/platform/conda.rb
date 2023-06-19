@@ -29,7 +29,7 @@ class NativePackageInstaller
       end
 
       def install_command
-        "conda install -c conda-forge"
+        "conda install -c conda-forge -y"
       end
 
       def need_super_user_priviledge?
