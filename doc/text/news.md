@@ -1,5 +1,11 @@
 # News
 
+## 1.1.7 - 2023-06-20
+
+### Fixes
+
+  * conda: Fixed a bug that auto installation may be blocked.
+
 ## 1.1.6 - 2023-06-18
 
 ### Improvements
