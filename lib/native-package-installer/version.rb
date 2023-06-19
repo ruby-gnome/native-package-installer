@@ -14,5 +14,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class NativePackageInstaller
-  VERSION = "1.1.7"
+  VERSION = "1.1.8"
 end
