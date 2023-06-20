@@ -20,7 +20,7 @@ class NativePackageInstaller
 
       class << self
         def current_platform?
-          ExecutableFinder.exist?("conda")
+          ENV["CONDA_PREFIX"] && ExecutableFinder.exist?("conda")
         end
       end
 
