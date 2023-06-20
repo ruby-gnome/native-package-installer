@@ -1,5 +1,12 @@
 # News
 
+## 1.1.8 - 2023-06-21
+
+### Improvements
+
+  * conda: Stopped to use conda unless `CONDA_PREFIX` environment
+    variable is defined.
+
 ## 1.1.7 - 2023-06-20
 
 ### Fixes
