@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare cache for Gentoo Linux
         if: |
           matrix.distribution == 'gentoo-linux'
@@ -66,7 +66,7 @@ jobs:
     runs-on: ${{ matrix.runs-on }}-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
@@ -78,7 +78,7 @@ jobs:
           matrix.runs-on != 'windows'
       # "gem install" installs native package on Windows.
       # So we need to use extconf.rb to test native-package-installer.
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         if: |
           matrix.runs-on == 'windows'
         with:
