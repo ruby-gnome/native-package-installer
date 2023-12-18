@@ -1,5 +1,11 @@
 # News
 
+## 1.1.9 - 2023-12-18
+
+### Improvements
+
+  * Added support for Alpine Linux.
+
 ## 1.1.8 - 2023-06-21
 
 ### Improvements
