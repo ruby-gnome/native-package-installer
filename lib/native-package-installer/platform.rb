@@ -59,6 +59,7 @@ require_relative "platform/suse"
 
 require_relative "platform/alpine-linux"
 
+
 # Windows
 require_relative "platform/msys2"
 
