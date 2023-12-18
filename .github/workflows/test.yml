@@ -10,6 +10,7 @@ jobs:
       matrix:
         distribution:
           - almalinux-9
+          - alpine-linux
           - alt-linux
           - amazon-linux-2
           - amazon-linux-2023

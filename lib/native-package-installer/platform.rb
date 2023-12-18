@@ -57,6 +57,7 @@ require_relative "platform/amazon-linux-2023"
 
 require_relative "platform/suse"
 
+require_relative "platform/alpine-linux"
 
 # Windows
 require_relative "platform/msys2"

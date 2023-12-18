@@ -27,6 +27,15 @@ services:
     command:
       /native-package-installer/dockerfiles/run-test.sh
 
+  alpine-linux:
+    build:
+      context: .
+      dockerfile: dockerfiles/alpine-linux.dockerfile
+    volumes:
+      - .:/native-package-installer:delegated
+    command:
+      /native-package-installer/dockerfiles/run-test.sh
+
   alt-linux:
     build:
       context: .
