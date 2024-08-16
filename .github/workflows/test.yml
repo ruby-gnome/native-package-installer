@@ -43,10 +43,10 @@ jobs:
           restore-keys: ${{ matrix.distribution }}-
       - name: Build Docker image
         run: |
-          docker-compose build ${{ matrix.distribution }}
+          docker compose build ${{ matrix.distribution }}
       - name: Run
         run: |
-          docker-compose run --rm ${{ matrix.distribution }}
+          docker compose run --rm ${{ matrix.distribution }}
 
   native:
     name: ${{ matrix.ruby-version }} on ${{ matrix.runs-on }}
