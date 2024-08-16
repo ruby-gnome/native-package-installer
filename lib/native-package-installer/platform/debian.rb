@@ -36,7 +36,7 @@ class NativePackageInstaller
       end
 
       def install_command
-        "apt-get install -V -y"
+        "env DEBIAN_FRONTEND=noninteractive apt-get install -V -y"
       end
 
       def need_super_user_priviledge?
