@@ -36,7 +36,14 @@ class NativePackageInstaller
   end
 
   def install
-    @spec.each do |platform_id, system_packages|
+    spec = @spec.dup
+    if @platform.target?("fedora")
+      spec[:fedora] ||= spec[:rhel] || spec[:redhat]
+    elsif @platform.target?("amazon_linux_2023")
+      spec[:amazon_linux_2023] ||=
+        spec[:amazon_linux] || spec[:fedora] || spec[:rhel] || spec[:redhat]
+    end
+    spec.each do |platform_id, system_packages|
       next unless @platform.target?(platform_id.to_s)
       system_packages = [system_packages] unless system_packages.is_a?(Array)
       requirement =
