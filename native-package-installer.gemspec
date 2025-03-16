@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2022  Ruby-GNOME Project Team
+# Copyright (C) 2013-2025  Ruby-GNOME Project Team
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -21,10 +21,12 @@ require "native-package-installer/version"
 Gem::Specification.new do |spec|
   spec.name = "native-package-installer"
   spec.version = NativePackageInstaller::VERSION
-  spec.authors = ["Kouhei Sutou"]
+  spec.authors = ["Sutou Kouhei"]
   spec.email = ["kou@clear-code.com"]
-  spec.summary = "native-package-installer helps to install native packages on \"gem install\""
+  spec.summary = "Deprecated. Use rubygems-requirements-system instead. native-package-installer helps to install native packages on \"gem install\"."
   spec.description = <<-DESCRIPTION.strip
+Deprecated. Use rubygems-requirements-system instead.
+
 Users need to install native packages to install an extension library
 that depends on native packages. It bores users because users need to
 install native packages and an extension library separately.
@@ -34,10 +36,12 @@ Users can install both native packages and an extension library by one action,
 "gem install".
   DESCRIPTION
   spec.homepage = "https://github.com/ruby-gnome/native-package-installer"
-  spec.licenses = ["LGPL-3+"]
+  spec.licenses = ["LGPL-3-or-later"]
   spec.require_paths = ["lib"]
 
   spec.files = ["README.md", "Rakefile"]
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("doc/text/**/*.*")
+
+  spec.add_runtime_dependency("rubygems-requirements-system")
 end

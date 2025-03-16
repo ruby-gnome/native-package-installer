@@ -27,5 +27,8 @@ else
   rake install
 fi
 
+# Disable rubygems-requirements-system RubyGems plugin and Bundler
+# plugin.
+export RUBYGEMS_REQUIREMENTS_SYSTEM=false
 export GNUMAKEFLAGS="-j$(nproc)"
 gem install --user-install cairo "$@"
