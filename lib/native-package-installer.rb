@@ -32,7 +32,8 @@ class NativePackageInstaller
 
   def initialize(spec)
     @spec = spec
-    @platform = RubyGemsRequirementsSystem::Platform.detect
+    ui = RubyGemsRequirementsSystem::UI.new(Gem.ui)
+    @platform = RubyGemsRequirementsSystem::Platform.detect(ui)
   end
 
   def install
