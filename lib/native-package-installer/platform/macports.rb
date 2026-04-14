@@ -29,7 +29,7 @@ class NativePackageInstaller
       end
 
       def install_command
-        "port install -y"
+        "port install -N"
       end
 
       def need_super_user_priviledge?
